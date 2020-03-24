@@ -71,6 +71,8 @@
       createHealthMonitor: createHealthMonitor,
       editHealthMonitor: editHealthMonitor,
       updateMemberList: updateMemberList,
+      getAvailabilityZones: getAvailabilityZones,
+      getAvailabilityZone: getAvailabilityZone,
       getFlavors: getFlavors,
       getFlavor: getFlavor,
       deleteFlavor: deleteFlavor,
@@ -892,6 +894,40 @@
       return apiService.post('/api/lbaas/flavorprofiles/', spec)
         .error(function () {
           toastService.add('error', gettext('Unable to create flavor profile.'));
+        });
+    }
+
+    // Availability Zones
+
+    /**
+     * @name horizon.app.core.openstack-service-api.lbaasv2.getAvailabilityZone
+     * @description
+     * Get a single load balancer availability zone by ID.
+     * @param {string} availabilityZoneId
+     * Specifies the id of the availability zone.
+     */
+
+    /**
+     * @name horizon.app.core.openstack-service-api.lbaasv2.getAvailabilityZones
+     * @description
+     * Get the list of availability zones.
+     *
+     * The listing result is an object with property "items". Each item is
+     * an availability zone.
+     */
+
+    function getAvailabilityZones() {
+      var params = {params: {}};
+      return apiService.get('/api/lbaas/availabilityzones/', params)
+        .error(function () {
+          toastService.add('error', gettext('Unable to retrieve availability zones.'));
+        });
+    }
+
+    function getAvailabilityZone(azId) {
+      return apiService.get('/api/lbaas/availabilityzones/' + azId + '/')
+        .error(function () {
+          toastService.add('error', gettext('Unable to retrieve availability zone.'));
         });
     }
 

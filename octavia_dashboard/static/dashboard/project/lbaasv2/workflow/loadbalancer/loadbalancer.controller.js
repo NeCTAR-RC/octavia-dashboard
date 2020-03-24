@@ -116,11 +116,32 @@
       }
     };
 
+    // Defines columns for the availability_zone selection filtered pop-up
+    ctrl.azColumns = [{
+      label: gettext('Availability Zone'),
+      value: 'name'
+    }];
+
+    ctrl.azOptions = [];
+
+    ctrl.azShorthand = function(availabilityZone) {
+      return availabilityZone.name;
+    };
+
+    ctrl.setAz = function(option) {
+      if (option) {
+        $scope.model.spec.loadbalancer.availability_zone = option.name;
+      } else {
+        $scope.model.spec.loadbalancer.availability_zone = null;
+      }
+    };
+
     ctrl.dataLoaded = false;
     ctrl._checkLoaded = function() {
       if ($scope.model.initialized) {
         ctrl.buildSubnetOptions();
         ctrl.buildFlavorOptions();
+        ctrl.buildAzOptions();
         ctrl.dataLoaded = true;
       }
     };
@@ -145,6 +166,9 @@
       $scope.$watchCollection('model.flavors', function() {
         ctrl._checkLoaded();
       });
+      $scope.$watchCollection('model.availability_zones', function() {
+        ctrl._checkLoaded();
+      });
       $scope.$watch('model.initialized', function() {
         ctrl._checkLoaded();
       });
@@ -160,6 +184,13 @@
         return $scope.model.flavors[key].is_enabled;
       }).map(function(key) {
         return $scope.model.flavors[key];
+      });
+    };
+    ctrl.buildAzOptions = function() {
+      ctrl.azOptions = Object.keys($scope.model.availability_zones).filter(function(key) {
+        return $scope.model.availability_zones[key].is_enabled;
+      }).map(function(key) {
+        return $scope.model.availability_zones[key];
       });
     };
   }
