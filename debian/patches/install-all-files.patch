@@ -1,0 +1,9 @@
+Description: install all files
+Author: Thomas Goirand <zigo@debian.org>
+Forwarded: not-needed
+Last-Update: 2018-10-10
+
+--- /dev/null	2018-10-05 23:01:04.447357411 +0200
++++ b/MANIFEST.in	2018-10-10 22:55:24.782799608 +0200
+@@ -0,0 +1 @@
++recursive-include octavia_dashboard *

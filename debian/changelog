@@ -1,0 +1,147 @@
+octavia-dashboard (4.0.0-0ubuntu1.1) UNRELEASED; urgency=medium
+
+  * d/gbp.conf: Create stable/train branch.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Wed, 06 Nov 2019 16:30:09 -0500
+
+octavia-dashboard (4.0.0-0ubuntu1) eoan; urgency=medium
+
+  * New upstream release for OpenStack Train.
+
+ -- James Page <james.page@ubuntu.com>  Wed, 16 Oct 2019 16:20:12 +0100
+
+octavia-dashboard (4.0.0~rc1-0ubuntu1) eoan; urgency=medium
+
+  * d/watch: track 4.x series.
+  * New upstream release candidate for OpenStack Train.
+  * d/control: Align (Build-)Depends with upstream.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Thu, 26 Sep 2019 16:58:36 -0400
+
+octavia-dashboard (4.0.0~b2~git2019073114.3661294-0ubuntu3) eoan; urgency=medium
+
+  * d/control: Switch back to python3-django >= 1:1.11. See related bug to
+    prevent python3-django 2:2.2.4 from migrating to eoan-release:
+    https://bugs.launchpad.net/bugs/1842969.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Thu, 05 Sep 2019 16:14:59 -0400
+
+octavia-dashboard (4.0.0~b2~git2019073114.3661294-0ubuntu2) eoan; urgency=medium
+
+  * d/control: Ensure python3-django is << 2:2.2.4.
+  * d/rules: Fix typo in DJANGO_SETTINGS_MODULE and add CLIENT_NAME.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Mon, 26 Aug 2019 12:45:38 -0400
+
+octavia-dashboard (4.0.0~b2~git2019073114.3661294-0ubuntu1) eoan; urgency=medium
+
+  * New upstream snapshot for OpenStack Train.
+  * d/control: Align (Build-)Depends with upstream.
+
+ -- Sahid Orentino Ferdjaoui <sahid.ferdjaoui@canonical.com>  Wed, 31 Jul 2019 14:06:19 +0200
+
+octavia-dashboard (4.0.0~b1~git2019061811.4b268b7-0ubuntu1) eoan; urgency=medium
+
+  * New upstream release 4.0.0~b1.
+  * d/control: Align (Build-)Depends with upstream.
+
+ -- Sahid Orentino Ferdjaoui <sahid.ferdjaoui@canonical.com>  Thu, 20 Jun 2019 05:15:40 +0100
+
+octavia-dashboard (3.0.0-0ubuntu1) disco; urgency=medium
+
+  * Upstream release for OpenStack Stein.
+
+ -- Sahid Orentino Ferdjaoui <sahid.ferdjaoui@canonical.com>  Fri, 12 Apr 2019 11:37:38 +0100
+
+octavia-dashboard (3.0.0~rc1-0ubuntu1) disco; urgency=medium
+
+  * d/watch: track 3.x series.
+  * New upstream release candidate for OpenStack Stein.
+
+ -- James Page <james.page@ubuntu.com>  Fri, 22 Mar 2019 11:06:12 +0000
+
+octavia-dashboard (3.0.0~b1~git2019031917.c599f8e-0ubuntu1) disco; urgency=medium
+
+  * New upstream snapshot for OpenStack Stein.
+  * d/control: Align (Build-)Depends with upstream.
+
+ -- James Page <james.page@ubuntu.com>  Tue, 19 Mar 2019 11:18:31 +0000
+
+octavia-dashboard (3.0.0~b1~git2019013120.ad43b1f-0ubuntu1) disco; urgency=medium
+
+  * New upstream snapshot for OpenStack Stein.
+  * d/control: Align (Build-)Depends with upstream.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Thu, 31 Jan 2019 20:56:56 -0500
+
+octavia-dashboard (3.0.0~b1~git2018112016.4974576-0ubuntu1) disco; urgency=medium
+
+  * New upstream snapshot for OpenStack Stein.
+  * d/control: Align (Build-)Depends with upstream.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Tue, 20 Nov 2018 16:05:55 -0500
+
+octavia-dashboard (2.0.0-2.1ubuntu1) disco; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - d/control: Add python3-django-horizon to (Build-)Depends. This is
+      required because Rocky packages default to Python 2.7 (LP: #1800519).
+    - d/rules, d/python3-octavia-dashboard.postinst, d/watch: Align dashboard
+      install, post-install, and watch file with other OpenStack dashboard
+      packages (LP: #1801091).
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Fri, 16 Nov 2018 13:41:36 -0500
+
+octavia-dashboard (2.0.0-2.1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Running wrap-and-sort -bast
+
+  [ Michal Arbet ]
+  * d/control: Fix typo (Closes: #909477).
+
+  [ Thomas Goirand ]
+  * Add patch to install all files, and install static files correctly
+    (Closes: #905037).
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 10 Oct 2018 22:56:44 +0200
+
+octavia-dashboard (2.0.0-1) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 05 Sep 2018 20:59:30 +0200
+
+octavia-dashboard (2.0.0~rc3-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Fixed (build-)depends for this release.
+
+ -- Alexandros Afentoulis <alexaf.dpkg@bloom.re>  Wed, 29 Aug 2018 10:42:21 +0300
+
+octavia-dashboard (2.0.0-0ubuntu1.1) cosmic; urgency=medium
+
+  * d/gbp.conf: Create stable/rocky branch.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Fri, 16 Nov 2018 12:26:07 -0500
+
+octavia-dashboard (2.0.0-0ubuntu1) cosmic; urgency=medium
+
+  * d/gbp.conf: Update gbp configuration file.
+  * d/control: Update Vcs-* links and maintainers.
+  * New upstream release for OpenStack Rocky (LP: #1800516).
+  * d/control: Add python3-django-horizon to (Build-)Depends. This is
+    required because Rocky packages default to Python 2.7 (LP: #1800519).
+  * d/p/remove-django-template-context-processors.patch: Dropped. No
+    longer needed with 2.0.0 release.
+  * d/rules, d/python3-octavia-dashboard.postinst, d/watch: Align dashboard
+    install, post-install, and watch file with other OpenStack dashboard
+    packages (LP: #1801091).
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Mon, 29 Oct 2018 14:29:02 -0400
+
+octavia-dashboard (1.0.1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #901608).
+
+ -- Michal Arbet <michal.arbet@ultimum.io>  Thu, 31 May 2018 10:46:01 +0100
