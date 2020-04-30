@@ -30,7 +30,7 @@ override_dh_clean:
 	dh_clean -O--buildsystem=python_distutils
 	find . -name '*pyc' -delete
 	rm -f octavia_dashboard/tests/.secret_key_store
-	rm -rf .coverage*
+	rm -rf .coverage
 	rm -rf build
 	rm -f AUTHORS ChangeLog
 
